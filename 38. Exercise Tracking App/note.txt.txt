@@ -1,0 +1,65 @@
+__________Day 38/Goal: Build Exercise Tracking App__________
+Project link: https://replit.com/@Nur-Fatin/Exercise-Tracking-App
+
+What the software does?
+Track the amount of time and calories burn during exercise 
+How it works?
+1. Ask user what exercise they did, include the duration.
+Then, Log the data inside spreadsheet
+If they give in unit like KM, change that into duration
+
+#####################################################################################################################
+What it needs to have?
+1. Google spreadsheet
+2. Nutrition & Exercise API with natural language functionality.
+ Turn spoken text into precise nutrition analysis (https://www.nutritionix.com/business/api)
+3. A service to Turn my Google spreadsheet into an API,
+So I can make http request. add data to the spreadsheet programmatically.
+
+What I need the computer to do? 
+    What's the first thing I need to happen?
+    How? What's the fastest way?
+    Think about user experience: how to fasten up the process of using the software.
+
+1. Setup Nutritionix API Credentials and Google Spreadsheet
+
+2. Get Exercise Stats with Natural Language Queries using Nutritionix API:
+> This API will enrich the exercise info that I give as an input
+> It will estimate calories burned using natural language as input
+Get input from user: input("Tell me what exercise you did: ")
+
+3. Set up Your Google Sheet with Sheety. Create a new project via my Google spreadsheet link.
+Sheety turns my spreadsheet -> Restful JSON API. So, I can add/change the data programmatically
+
+4. Saving Exercise Data into Google Sheets, include the current time.
+means create a new row in sheet.
+
+5. Authenticate Your Sheety API
+    > create token in sheety
+    > add token to header variable in json format
+    > update the request to include headers
+
+6. Environment Variables in Repl.it.
+    > Before I can upload my app into Repl.it,
+    I need to store my all sensitive data inside environment variables
+    import os
+
+     1. create a .env file in Repl.it to store the Environment Variables.
+
+     2. set the environment variables
+        APP_ID = os.environ["APP_ID"]
+        API_KEY = os.environ["API_KEY"]
+
+     3. get the environment variables and use the value inside my program
+        APP_ID = os.environ.get("APP_ID")
+        API_KEY = os.environ.get("API_KEY")
+
+
+
+
+#####################################################################################################################
+Concept 1: turn Google spreadsheet into API endpoints with the authentication
+Why important : Save data in spreadsheet automatically
+
+Concept 2: natural language functionality in API
+Why important : Enrich existing data
