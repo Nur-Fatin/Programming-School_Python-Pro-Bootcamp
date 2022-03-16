@@ -1,0 +1,67 @@
+Day 37/Goal: Build Habit Tracker
+Project URL: https://pixe.la/v1/users/nurbliss25/graphs/graph1.html
+
+What the software does?
+Turn goal into a daily habit. Track habit day by day for a year including the intensity.
+How it works?
+1. Decide what habit you want to build
+2. Show which day I have done my habit, which day not with pixel. one pixel/day
+3. show the intensity; measure the activity, with pixel color
+4. see the entire progress
+
+###############################################################################
+What it needs to have?
+1. Access to Pixela API
+
+What need to happen first?
+How? What's the fastest way?
+Think about user experience: how to fasten up the process of using the software.
+
+1. Create account with Pixela using POST request to enter username, token/password etc.
+
+2. Create graph using POST request with new endpoint,
+     > configure the graph
+     > attach token via http header
+
+3. Get the graph
+
+4. Post values to the graph & create a new pixel
+    > create new endpoint as specified
+    > Add the pixel data as dictionary JSON format. specify today date and how many minutes I code today
+    > create send post request to send the pixel data
+
+5. But everytime I run this program I need to change the today date. How to get it to be automated?
+    >  from datetime module import datetime class. datetime module can be used to get current date
+    and time as well as create any date. enter year, month, day parameters into datetime class
+    > datetime.now() to get today date. But it's not in the format that I need.
+    How to change the date format to any format based on the API requirement?
+    -> use strftime method to format datetime object
+    ref : https://www.w3schools.com/python/python_datetime.asp
+
+6. update and delete pixel; requests.put() and requests.delete()
+
+###############################################################################
+
+Concept 1: Make HTTP Requests across the internet
+4 Types of http requests & Why they are important :
+
+1. GET requests.get() -> To get data from somebody else. My program send a request to the external service to get
+a particular piece of data. They give that data in response
+2. POST requests.post() -> gives some piece of data to the external service.
+In response, they tell us whether it's successful or not
+3. PUT requests.put() -> put update some piece of data in the external service
+4. DELETE requests.delete() -> delete data in the external service
+
+
+Concept 2: Advanced & More Secure Authentication with HTTP Header
+Why important :More secure
+2 ways to attach my API key/token when sending HTTP requests
+1. querystring parameters(It's dangerous to put secret info like API key when making requests)
+2. HTTP header; X-Api-Key or Authorization(avoid this way as not secure)
+
+
+Concept 3: strftime method from datetime class
+Why important : change date format to meet API requirement
+
+
+
