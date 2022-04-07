@@ -1,0 +1,32 @@
+import random
+
+word_list = ["aardvark", "baboon", "camel"]
+chosen_word = random.choice(word_list)
+word_length = len(chosen_word)
+display = []
+
+for _ in range(word_length):
+    display.append("_")
+print(display)
+
+total_lives = 7
+game_over = False
+while not game_over:
+    guess = input("Guess a letter: ").lower()
+
+    for position in range(word_length):
+        if chosen_word[position] == guess:
+            display[position] = guess
+    print(display)
+
+    if "_" not in display:
+        game_over = True
+        print("You Won!")
+
+    if guess not in chosen_word:
+        total_lives -= 1
+        print(f"Remaining lives: {total_lives}")
+
+    if total_lives == 0:
+        game_over = True
+        print("You Lose!")
