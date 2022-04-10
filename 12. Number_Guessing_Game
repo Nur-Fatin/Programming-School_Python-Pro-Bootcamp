@@ -1,0 +1,44 @@
+from random import randint
+
+EASY_LEVEL_TURNS = 10
+HARD_LEVEL_TURNS = 5
+
+logo = """
+ _____                       _____ _            _   _                 _               
+|  __ \                     |_   _| |          | \ | |               | |              
+| |  \/_   _  ___  ___ ___    | | | |__   ___  |  \| |_   _ _ __ ___ | |__   ___ _ __ 
+| | __| | | |/ _ \/ __/ __|   | | | '_ \ / _ \ | . ` | | | | '_ ` _ \| '_ \ / _ \ '__|
+| |_\ \ |_| |  __/\__ \__ \   | | | | | |  __/ | |\  | |_| | | | | | | |_) |  __/ |   
+ \____/\__,_|\___||___/___/   \_/ |_| |_|\___| \_| \_/\__,_|_| |_| |_|_.__/ \___|_|   
+                                                                                                                                                                          
+"""
+print(logo)
+print("Welcome to the Number Guessing Game!")
+secret_number = randint(1, 100)
+print("I'm thinking of a number between 1 and 100")
+
+difficulty_level = input("Choose a difficulty: Type 'easy' or 'hard': ").lower()
+if difficulty_level == 'easy':
+    turns = EASY_LEVEL_TURNS
+else:
+    turns = HARD_LEVEL_TURNS
+
+guess = 0
+while turns > 0 and guess != secret_number:
+    print(f"You've {turns} attempts remaining to guess the number.")
+    guess = int(input("Make a guess: "))
+
+    if guess > secret_number:
+        print("Too high")
+    elif guess < secret_number:
+        print("Too low")
+    else:
+        print(f"You got it! The answer was {secret_number}.")
+
+    turns -= 1
+
+    if turns == 0:
+        print("You've run out of guesses, you lose")
+    elif guess != secret_number:
+        print("Guess again.")
+
