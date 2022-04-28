@@ -1,0 +1,8 @@
+How to keep data permanently inside the computer?
+- Using the file systems
+So how to manipulate file system - open, read, write and close files on my computer system?
+
+1. How to open, read and write to files using the with keyword
+2. relative and absolute file paths
+
+
