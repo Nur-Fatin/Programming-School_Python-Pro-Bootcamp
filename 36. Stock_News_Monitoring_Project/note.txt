@@ -1,0 +1,15 @@
+
+
+
+
+What I want the computer to do:
+get live stock data from stock API
+compare closing stock price between yesterday and the day before yesterday
+calculate the difference in percentage
+
+if 5% or more, get top 3 company news pieces from news API
+
+use SMS API to
+
+
+
