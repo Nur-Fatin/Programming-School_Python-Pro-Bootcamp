@@ -1,0 +1,6 @@
+get weather forecast from weather database website
+ - require API Keys
+using Twilio API to send SMS rain alert
+hide API key in EV to increase security
+
+
